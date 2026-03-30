@@ -1,0 +1,32 @@
+# docker-compose.yml  — Fase 3 SaaS dev environment
+# Arrancar: docker compose up -d
+# Detener:  docker compose down
+
+services:
+
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB:       inventario
+      POSTGRES_USER:     postgres
+      POSTGRES_PASSWORD: dev_secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d inventario"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+  adminer:
+    image: adminer:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy

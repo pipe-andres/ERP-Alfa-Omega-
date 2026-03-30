@@ -1,0 +1,13 @@
+--- py -3.11 --version ---
+Python 3.11 NO instalado
+--- py -3.12 --version ---
+Python 3.12 NO instalado
+--- where python ---
+C:\Python314\python.exe
+C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\python.exe
+C:\Users\ADMIN\AppData\Local\Microsoft\WindowsApps\python.exe
+
+--- py --list ---
+ -V:3.14 *        Python 3.14 (64-bit)
+ -V:3.13          Python 3.13 (64-bit)
+

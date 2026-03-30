@@ -1,0 +1,24 @@
+# core/auth.py
+from __future__ import annotations
+import secrets
+import hashlib
+from typing import Optional, List, Dict
+import tkinter as tk
+from tkinter import ttk, messagebox
+import re   
+
+from .database import get_connection
+
+# =========================================================
+# Utilidades de password (hash + verificación)
+# =========================================================
+def _hash_password(password: str, *, salt: Optional[str] = None) -> str:
+    """
+    Genera un hash con esquema: algo:sha256:salt:hashhex
+    """
+    if not salt:
+        salt = secrets.token_hex(16)
+    h = hashlib.sha256((salt + password).encode("utf-8")).hexdigest()
+    return f"algo:sha256:{salt}:{h}"
+
+# rest of file omitted for backup

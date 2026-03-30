@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-03-06T15:47:54.932908",
+  "total_pass": 44,
+  "total_fail": 2,
+  "success_rate": 95.65217391304348,
+  "errors": [
+    "[DB Schema Integrity] Tabla 'sqlite_sequence' sin PK",
+    "[Logging System] Error sistema logs: 'charmap' codec can't decode byte 0x8d in position 999: character maps to <undefined>"
+  ],
+  "test_results": {
+    "DB Schema Integrity": {
+      "pass": 23,
+      "fail": 1,
+      "errors": [
+        "Tabla 'sqlite_sequence' sin PK"
+      ]
+    },
+    "DB Indexes": {
+      "pass": 1,
+      "fail": 0,
+      "errors": []
+    },
+    "Stock Control": {
+      "pass": 3,
+      "fail": 0,
+      "errors": []
+    },
+    "Stock Negative Prevention": {
+      "pass": 1,
+      "fail": 0,
+      "errors": []
+    },
+    "Data Persistence": {
+      "pass": 1,
+      "fail": 0,
+      "errors": []
+    },
+    "License Validation": {
+      "pass": 3,
+      "fail": 0,
+      "errors": []
+    },
+    "Logging System": {
+      "pass": 1,
+      "fail": 1,
+      "errors": [
+        "Error sistema logs: 'charmap' codec can't decode byte 0x8d in position 999: character maps to <undefined>"
+      ]
+    },
+    "Backup System": {
+      "pass": 3,
+      "fail": 0,
+      "errors": []
+    },
+    "Stability Stress": {
+      "pass": 4,
+      "fail": 0,
+      "errors": [],
+      "operations": 150
+    },
+    "Executable Compatibility": {
+      "pass": 4,
+      "fail": 0,
+      "errors": []
+    }
+  }
+}

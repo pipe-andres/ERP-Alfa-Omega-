@@ -1,0 +1,1025 @@
+﻿py : 124 INFO: 
+PyInstaller: 6.19.0, 
+contrib hooks: 2026.3
+En línea: 1 Carácter: 1
++ py -3.13 -m PyInstaller 
+AlfaOmega_v2.spec --clean 
+--noconfirm > out_e ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (124  
+   INFO: PyIns...b hooks   
+ : 2026.3:String) [], R    
+emoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+125 INFO: Python: 3.13.7
+147 INFO: Platform: 
+Windows-11-10.0.26200-SP0
+147 INFO: Python 
+environment: C:\Users\ADMIN
+\AppData\Local\Programs\Pyt
+hon\Python313
+149 INFO: Removing 
+temporary files and 
+cleaning cache in C:\Users\
+ADMIN\AppData\Local\pyinsta
+ller
+160 INFO: Module search 
+paths (PYTHONPATH):
+['C:\\Users\\ADMIN\\Desktop
+\\VS Code - 
+Projects\\Saas\\Alfa&Omega 
+- Sistema '
+ 'Inventario 2\\Alfa&Omega 
+- Sistema Inventario 
+2\\Alfa&Omega - Sistema '
+ 'Inventario\\Inventario',
+ 'C:\\Users\\ADMIN\\AppData
+\\Local\\Programs\\Python\\
+Python313\\python313.zip',
+ 'C:\\Users\\ADMIN\\AppData
+\\Local\\Programs\\Python\\
+Python313\\DLLs',
+ 'C:\\Users\\ADMIN\\AppData
+\\Local\\Programs\\Python\\
+Python313\\Lib',
+ 'C:\\Users\\ADMIN\\AppData
+\\Local\\Programs\\Python\\
+Python313',
+ 'C:\\Users\\ADMIN\\AppData
+\\Local\\Programs\\Python\\
+Python313\\Lib\\site-packag
+es',
+ 'C:\\Users\\ADMIN\\Desktop
+\\VS Code - 
+Projects\\Saas\\Alfa&Omega 
+- Sistema '
+ 'Inventario 2\\Alfa&Omega 
+- Sistema Inventario 
+2\\Alfa&Omega - Sistema '
+ 'Inventario\\Inventario']
+pygame 2.6.1 (SDL 2.28.4, Python 3.13.7)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+557 INFO: Appending 
+'datas' from .spec
+580 INFO: checking Analysis
+580 INFO: Building 
+Analysis because 
+Analysis-00.toc is non 
+existent
+580 INFO: Looking for 
+Python shared library...
+580 INFO: Using Python 
+shared library: C:\Users\AD
+MIN\AppData\Local\Programs\
+Python\Python313\python313.
+dll
+580 INFO: Running Analysis 
+Analysis-00.toc
+580 INFO: Target bytecode 
+optimization level: 0
+580 INFO: Initializing 
+module dependency graph...
+581 INFO: Initializing 
+module graph hook caches...
+595 INFO: Analyzing 
+modules for 
+base_library.zip ...
+1686 INFO: Processing 
+standard module hook 
+'hook-heapq.py' from 'C:\\U
+sers\\ADMIN\\AppData\\Local
+\\Programs\\Python\\Python3
+13\\Lib\\site-packages\\PyI
+nstaller\\hooks'
+1781 INFO: Processing 
+standard module hook 
+'hook-encodings.py' from 'C
+:\\Users\\ADMIN\\AppData\\L
+ocal\\Programs\\Python\\Pyt
+hon313\\Lib\\site-packages\
+\PyInstaller\\hooks'
+3502 INFO: Processing 
+standard module hook 
+'hook-pickle.py' from 'C:\\
+Users\\ADMIN\\AppData\\Loca
+l\\Programs\\Python\\Python
+313\\Lib\\site-packages\\Py
+Installer\\hooks'
+4845 INFO: Caching module 
+dependency graph...
+4880 INFO: Analyzing 
+C:\Users\ADMIN\Desktop\VS 
+Code - 
+Projects\Saas\Alfa&Omega - 
+Sistema Inventario 
+2\Alfa&Omega - Sistema 
+Inventario 2\Alfa&Omega - 
+Sistema Inventario\Inventar
+io\main.py
+4886 INFO: Processing 
+pre-find-module-path hook 
+'hook-tkinter.py' from 'C:\
+\Users\\ADMIN\\AppData\\Loc
+al\\Programs\\Python\\Pytho
+n313\\Lib\\site-packages\\P
+yInstaller\\hooks\\pre_find
+_module_path'
+4887 INFO: TclTkInfo: 
+initializing cached Tcl/Tk 
+info...
+5142 INFO: Processing 
+standard module hook 
+'hook-_tkinter.py' from 'C:
+\\Users\\ADMIN\\AppData\\Lo
+cal\\Programs\\Python\\Pyth
+on313\\Lib\\site-packages\\
+PyInstaller\\hooks'
+5201 INFO: Processing 
+standard module hook 
+'hook-sqlite3.py' from 'C:\
+\Users\\ADMIN\\AppData\\Loc
+al\\Programs\\Python\\Pytho
+n313\\Lib\\site-packages\\P
+yInstaller\\hooks'
+5467 INFO: Processing 
+standard module hook 
+'hook-psycopg2.py' from 'C:
+\\Users\\ADMIN\\AppData\\Lo
+cal\\Programs\\Python\\Pyth
+on313\\Lib\\site-packages\\
+_pyinstaller_hooks_contrib\
+\stdhooks'
+5605 INFO: Processing 
+standard module hook 
+'hook-platform.py' from 'C:
+\\Users\\ADMIN\\AppData\\Lo
+cal\\Programs\\Python\\Pyth
+on313\\Lib\\site-packages\\
+PyInstaller\\hooks'
+5623 INFO: Processing 
+standard module hook 
+'hook-_ctypes.py' from 'C:\
+\Users\\ADMIN\\AppData\\Loc
+al\\Programs\\Python\\Pytho
+n313\\Lib\\site-packages\\P
+yInstaller\\hooks'
+6257 INFO: Processing 
+standard module hook 
+'hook-sqlalchemy.py' from '
+C:\\Users\\ADMIN\\AppData\\
+Local\\Programs\\Python\\Py
+thon313\\Lib\\site-packages
+\\PyInstaller\\hooks'
+6798 INFO: Processing 
+standard module hook 
+'hook-sysconfig.py' from 'C
+:\\Users\\ADMIN\\AppData\\L
+ocal\\Programs\\Python\\Pyt
+hon313\\Lib\\site-packages\
+\PyInstaller\\hooks'
+6802 INFO: Processing 
+pre-safe-import-module 
+hook 'hook-importlib_metada
+ta.py' from 'C:\\Users\\ADM
+IN\\AppData\\Local\\Program
+s\\Python\\Python313\\Lib\\
+site-packages\\PyInstaller\
+\hooks\\pre_safe_import_mod
+ule'
+6803 INFO: SetuptoolsInfo: 
+initializing cached 
+setuptools info...
+7236 INFO: Setuptools: 
+'importlib_metadata' 
+appears to be a 
+setuptools-vendored copy - 
+creating alias to 'setuptoo
+ls._vendor.importlib_metada
+ta'!
+7242 INFO: Processing 
+standard module hook 
+'hook-setuptools.py' from '
+C:\\Users\\ADMIN\\AppData\\
+Local\\Programs\\Python\\Py
+thon313\\Lib\\site-packages
+\\PyInstaller\\hooks'
+7266 INFO: Processing 
+pre-safe-import-module 
+hook 'hook-distutils.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks\
+\pre_safe_import_module'
+7296 INFO: Processing 
+pre-safe-import-module 
+hook 'hook-jaraco.py' from 
+'C:\\Users\\ADMIN\\AppData\
+\Local\\Programs\\Python\\P
+ython313\\Lib\\site-package
+s\\PyInstaller\\hooks\\pre_
+safe_import_module'
+7297 INFO: Setuptools: 
+'jaraco' appears to be a 
+full setuptools-vendored 
+copy - creating alias to 's
+etuptools._vendor.jaraco'!
+7308 INFO: Processing 
+pre-safe-import-module 
+hook 
+'hook-more_itertools.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks\
+\pre_safe_import_module'
+7309 INFO: Setuptools: 
+'more_itertools' appears 
+to be a 
+setuptools-vendored copy - 
+creating alias to 'setuptoo
+ls._vendor.more_itertools'!
+7444 INFO: Processing 
+pre-safe-import-module 
+hook 'hook-typing_extension
+s.py' from 'C:\\Users\\ADMI
+N\\AppData\\Local\\Programs
+\\Python\\Python313\\Lib\\s
+ite-packages\\PyInstaller\\
+hooks\\pre_safe_import_modu
+le'
+7823 INFO: Processing 
+standard module hook 'hook-
+multiprocessing.util.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks'
+7956 INFO: Processing 
+standard module hook 
+'hook-xml.py' from 'C:\\Use
+rs\\ADMIN\\AppData\\Local\\
+Programs\\Python\\Python313
+\\Lib\\site-packages\\PyIns
+taller\\hooks'
+8620 INFO: Processing 
+pre-safe-import-module 
+hook 'hook-packaging.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks\
+\pre_safe_import_module'
+8791 INFO: Processing 
+standard module hook 'hook-
+setuptools._vendor.jaraco.t
+ext.py' from 'C:\\Users\\AD
+MIN\\AppData\\Local\\Progra
+ms\\Python\\Python313\\Lib\
+\site-packages\\PyInstaller
+\\hooks'
+8793 INFO: Processing 
+pre-safe-import-module 
+hook 'hook-importlib_resour
+ces.py' from 'C:\\Users\\AD
+MIN\\AppData\\Local\\Progra
+ms\\Python\\Python313\\Lib\
+\site-packages\\PyInstaller
+\\hooks\\pre_safe_import_mo
+dule'
+9007 INFO: Processing 
+pre-safe-import-module 
+hook 'hook-backports.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks\
+\pre_safe_import_module'
+9008 INFO: Setuptools: 
+'backports' appears to be 
+a full setuptools-vendored 
+copy - creating alias to 's
+etuptools._vendor.backports
+'!
+9494 INFO: Processing 
+pre-safe-import-module 
+hook 'hook-tomli.py' from '
+C:\\Users\\ADMIN\\AppData\\
+Local\\Programs\\Python\\Py
+thon313\\Lib\\site-packages
+\\PyInstaller\\hooks\\pre_s
+afe_import_module'
+9494 INFO: Setuptools: 
+'tomli' appears to be a 
+setuptools-vendored copy - 
+creating alias to 
+'setuptools._vendor.tomli'!
+10188 INFO: Processing 
+pre-safe-import-module 
+hook 'hook-wheel.py' from '
+C:\\Users\\ADMIN\\AppData\\
+Local\\Programs\\Python\\Py
+thon313\\Lib\\site-packages
+\\PyInstaller\\hooks\\pre_s
+afe_import_module'
+10189 INFO: Setuptools: 
+'wheel' appears to be a 
+setuptools-vendored copy - 
+creating alias to 
+'setuptools._vendor.wheel'!
+10251 INFO: Processing 
+standard module hook 'hook-
+setuptools._vendor.importli
+b_metadata.py' from 'C:\\Us
+ers\\ADMIN\\AppData\\Local\
+\Programs\\Python\\Python31
+3\\Lib\\site-packages\\PyIn
+staller\\hooks'
+10271 INFO: Processing 
+pre-safe-import-module 
+hook 'hook-zipp.py' from 'C
+:\\Users\\ADMIN\\AppData\\L
+ocal\\Programs\\Python\\Pyt
+hon313\\Lib\\site-packages\
+\PyInstaller\\hooks\\pre_sa
+fe_import_module'
+10272 INFO: Setuptools: 
+'zipp' appears to be a 
+setuptools-vendored copy - 
+creating alias to 
+'setuptools._vendor.zipp'!
+13798 INFO: Processing 
+standard module hook 'hook-
+reportlab.lib.utils.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\_pyinstaller_hooks_
+contrib\\stdhooks'
+13855 INFO: Processing 
+standard module hook 
+'hook-PIL.py' from 'C:\\Use
+rs\\ADMIN\\AppData\\Local\\
+Programs\\Python\\Python313
+\\Lib\\site-packages\\PyIns
+taller\\hooks'
+14019 INFO: Processing 
+standard module hook 
+'hook-PIL.Image.py' from 'C
+:\\Users\\ADMIN\\AppData\\L
+ocal\\Programs\\Python\\Pyt
+hon313\\Lib\\site-packages\
+\PyInstaller\\hooks'
+14370 INFO: Processing 
+standard module hook 
+'hook-numpy.py' from 'C:\\U
+sers\\ADMIN\\AppData\\Local
+\\Programs\\Python\\Python3
+13\\Lib\\site-packages\\PyI
+nstaller\\hooks'
+14958 INFO: Processing 
+standard module hook 
+'hook-difflib.py' from 'C:\
+\Users\\ADMIN\\AppData\\Loc
+al\\Programs\\Python\\Pytho
+n313\\Lib\\site-packages\\P
+yInstaller\\hooks'
+17089 INFO: Processing 
+standard module hook 'hook-
+charset_normalizer.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\_pyinstaller_hooks_
+contrib\\stdhooks'
+17462 INFO: Processing 
+standard module hook 'hook-
+xml.etree.cElementTree.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks'
+17649 INFO: Processing 
+standard module hook 
+'hook-PIL.ImageFilter.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks'
+17915 INFO: Processing 
+standard module hook 'hook-
+reportlab.pdfbase._fontdata
+.py' from 'C:\\Users\\ADMIN
+\\AppData\\Local\\Programs\
+\Python\\Python313\\Lib\\si
+te-packages\\_pyinstaller_h
+ooks_contrib\\stdhooks'
+20278 INFO: Processing 
+standard module hook 
+'hook-xml.dom.domreg.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks'
+20745 INFO: Processing 
+standard module hook 
+'hook-passlib.py' from 'C:\
+\Users\\ADMIN\\AppData\\Loc
+al\\Programs\\Python\\Pytho
+n313\\Lib\\site-packages\\_
+pyinstaller_hooks_contrib\\
+stdhooks'
+20892 INFO: Processing 
+standard module hook 
+'hook-openpyxl.py' from 'C:
+\\Users\\ADMIN\\AppData\\Lo
+cal\\Programs\\Python\\Pyth
+on313\\Lib\\site-packages\\
+_pyinstaller_hooks_contrib\
+\stdhooks'
+22425 INFO: Processing 
+standard module hook 
+'hook-pandas.py' from 'C:\\
+Users\\ADMIN\\AppData\\Loca
+l\\Programs\\Python\\Python
+313\\Lib\\site-packages\\Py
+Installer\\hooks'
+23665 INFO: Processing 
+standard module hook 
+'hook-zoneinfo.py' from 'C:
+\\Users\\ADMIN\\AppData\\Lo
+cal\\Programs\\Python\\Pyth
+on313\\Lib\\site-packages\\
+_pyinstaller_hooks_contrib\
+\stdhooks'
+23914 INFO: Processing 
+standard module hook 
+'hook-scipy.py' from 'C:\\U
+sers\\ADMIN\\AppData\\Local
+\\Programs\\Python\\Python3
+13\\Lib\\site-packages\\PyI
+nstaller\\hooks'
+24511 INFO: Processing 
+standard module hook 
+'hook-pytest.py' from 'C:\\
+Users\\ADMIN\\AppData\\Loca
+l\\Programs\\Python\\Python
+313\\Lib\\site-packages\\_p
+yinstaller_hooks_contrib\\s
+tdhooks'
+24806 INFO: Processing 
+standard module hook 
+'hook-pygments.py' from 'C:
+\\Users\\ADMIN\\AppData\\Lo
+cal\\Programs\\Python\\Pyth
+on313\\Lib\\site-packages\\
+PyInstaller\\hooks'
+25877 INFO: Processing 
+standard module hook 
+'hook-py.py' from 'C:\\User
+s\\ADMIN\\AppData\\Local\\P
+rograms\\Python\\Python313\
+\Lib\\site-packages\\_pyins
+taller_hooks_contrib\\stdho
+oks'
+27171 INFO: Processing 
+standard module hook 
+'hook-pycparser.py' from 'C
+:\\Users\\ADMIN\\AppData\\L
+ocal\\Programs\\Python\\Pyt
+hon313\\Lib\\site-packages\
+\_pyinstaller_hooks_contrib
+\\stdhooks'
+28594 INFO: Processing 
+standard module hook 
+'hook-scipy.linalg.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks'
+28734 INFO: Processing 
+standard module hook 'hook-
+scipy.special._ufuncs.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks'
+30102 INFO: Processing 
+standard module hook 'hook-
+scipy.spatial._ckdtree.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks'
+31001 INFO: Processing 
+standard module hook 'hook-
+scipy.spatial.transform.rot
+ation.py' from 'C:\\Users\\
+ADMIN\\AppData\\Local\\Prog
+rams\\Python\\Python313\\Li
+b\\site-packages\\PyInstall
+er\\hooks'
+32034 INFO: Processing 
+standard module hook 'hook-
+scipy.stats._stats.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks'
+32875 INFO: Processing 
+standard module hook 'hook-
+scipy.sparse.csgraph.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks'
+33979 INFO: Processing 
+standard module hook 'hook-
+scipy.special._ellip_harm_2
+.py' from 'C:\\Users\\ADMIN
+\\AppData\\Local\\Programs\
+\Python\\Python313\\Lib\\si
+te-packages\\PyInstaller\\h
+ooks'
+36144 INFO: Processing 
+standard module hook 'hook-
+pandas.io.formats.style.py'
+ from 'C:\\Users\\ADMIN\\Ap
+pData\\Local\\Programs\\Pyt
+hon\\Python313\\Lib\\site-p
+ackages\\PyInstaller\\hooks
+'
+38765 INFO: Processing 
+standard module hook 
+'hook-pandas.plotting.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks'
+39360 INFO: Processing 
+standard module hook 
+'hook-dateutil.py' from 'C:
+\\Users\\ADMIN\\AppData\\Lo
+cal\\Programs\\Python\\Pyth
+on313\\Lib\\site-packages\\
+_pyinstaller_hooks_contrib\
+\stdhooks'
+39546 INFO: Processing 
+pre-safe-import-module 
+hook 'hook-six.moves.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks\
+\pre_safe_import_module'
+41357 INFO: Processing 
+standard module hook 'hook-
+pandas.io.clipboard.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks'
+42011 INFO: Processing 
+standard module hook 
+'hook-patsy.py' from 'C:\\U
+sers\\ADMIN\\AppData\\Local
+\\Programs\\Python\\Python3
+13\\Lib\\site-packages\\_py
+installer_hooks_contrib\\st
+dhooks'
+43968 INFO: Processing 
+standard module hook 'hook-
+statsmodels.tsa.statespace.
+py' from 'C:\\Users\\ADMIN\
+\AppData\\Local\\Programs\\
+Python\\Python313\\Lib\\sit
+e-packages\\_pyinstaller_ho
+oks_contrib\\stdhooks'
+49141 INFO: Analyzing 
+hidden import 'jose'
+49144 INFO: Analyzing 
+hidden import 'fastapi'
+49269 INFO: Processing 
+standard module hook 
+'hook-anyio.py' from 'C:\\U
+sers\\ADMIN\\AppData\\Local
+\\Programs\\Python\\Python3
+13\\Lib\\site-packages\\_py
+installer_hooks_contrib\\st
+dhooks'
+50321 INFO: Processing 
+standard module hook 
+'hook-pydantic.py' from 'C:
+\\Users\\ADMIN\\AppData\\Lo
+cal\\Programs\\Python\\Pyth
+on313\\Lib\\site-packages\\
+_pyinstaller_hooks_contrib\
+\stdhooks'
+52651 INFO: Processing 
+module hooks (post-graph 
+stage)...
+52912 WARNING: Hidden 
+import "mx.DateTime" not 
+found!
+52913 WARNING: Hidden 
+import "pycparser.lextab" 
+not found!
+52913 WARNING: Hidden 
+import "pycparser.yacctab" 
+not found!
+53187 INFO: Processing 
+standard module hook 
+'hook-jinja2.py' from 'C:\\
+Users\\ADMIN\\AppData\\Loca
+l\\Programs\\Python\\Python
+313\\Lib\\site-packages\\_p
+yinstaller_hooks_contrib\\s
+tdhooks'
+54209 INFO: Processing 
+standard module hook 'hook-
+PIL.SpiderImagePlugin.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks'
+56654 WARNING: Hidden 
+import 
+"scipy.special._cdflib" 
+not found!
+56698 INFO: Processing 
+standard module hook 
+'hook-sqlalchemy.py' from '
+C:\\Users\\ADMIN\\AppData\\
+Local\\Programs\\Python\\Py
+thon313\\Lib\\site-packages
+\\PyInstaller\\hooks'
+57108 WARNING: Hidden 
+import "pysqlite2" not 
+found!
+57108 WARNING: Hidden 
+import "MySQLdb" not found!
+58491 INFO: Processing 
+standard module hook 
+'hook-_tkinter.py' from 'C:
+\\Users\\ADMIN\\AppData\\Lo
+cal\\Programs\\Python\\Pyth
+on313\\Lib\\site-packages\\
+PyInstaller\\hooks'
+58497 INFO: Processing 
+standard module hook 
+'hook-tzdata.py' from 'C:\\
+Users\\ADMIN\\AppData\\Loca
+l\\Programs\\Python\\Python
+313\\Lib\\site-packages\\_p
+yinstaller_hooks_contrib\\s
+tdhooks'
+59078 INFO: Performing 
+binary vs. data 
+reclassification (2600 
+entries)
+59313 INFO: Looking for 
+ctypes DLLs
+59469 INFO: Analyzing 
+run-time hooks ...
+59485 INFO: Including 
+run-time hook 
+'pyi_rth_setuptools.py' 
+from 'C:\\Users\\ADMIN\\App
+Data\\Local\\Programs\\Pyth
+on\\Python313\\Lib\\site-pa
+ckages\\PyInstaller\\hooks\
+\rthooks'
+59487 INFO: Including 
+run-time hook 
+'pyi_rth_pkgutil.py' from '
+C:\\Users\\ADMIN\\AppData\\
+Local\\Programs\\Python\\Py
+thon313\\Lib\\site-packages
+\\PyInstaller\\hooks\\rthoo
+ks'
+59489 INFO: Including 
+run-time hook 'pyi_rth_mult
+iprocessing.py' from 'C:\\U
+sers\\ADMIN\\AppData\\Local
+\\Programs\\Python\\Python3
+13\\Lib\\site-packages\\PyI
+nstaller\\hooks\\rthooks'
+59492 INFO: Including 
+run-time hook 
+'pyi_rth_inspect.py' from '
+C:\\Users\\ADMIN\\AppData\\
+Local\\Programs\\Python\\Py
+thon313\\Lib\\site-packages
+\\PyInstaller\\hooks\\rthoo
+ks'
+59496 INFO: Including 
+run-time hook 
+'pyi_rth__tkinter.py' from 
+'C:\\Users\\ADMIN\\AppData\
+\Local\\Programs\\Python\\P
+ython313\\Lib\\site-package
+s\\PyInstaller\\hooks\\rtho
+oks'
+59608 INFO: Creating 
+base_library.zip...
+59631 INFO: Looking for 
+dynamic libraries
+62910 INFO: Extra DLL 
+search directories 
+(AddDllDirectory): ['C:\\Us
+ers\\ADMIN\\AppData\\Local\
+\Programs\\Python\\Python31
+3\\Lib\\site-packages\\psyc
+opg2_binary.libs', 'C:\\Use
+rs\\ADMIN\\AppData\\Local\\
+Programs\\Python\\Python313
+\\Lib\\site-packages\\numpy
+.libs', 'C:\\Users\\ADMIN\\
+AppData\\Local\\Programs\\P
+ython\\Python313\\Lib\\site
+-packages\\pandas.libs', 'C
+:\\Users\\ADMIN\\AppData\\L
+ocal\\Programs\\Python\\Pyt
+hon313\\Lib\\site-packages\
+\scipy.libs']
+62910 INFO: Extra DLL 
+search directories (PATH): 
+[]
+65397 INFO: Warnings 
+written to 
+C:\Users\ADMIN\Desktop\VS 
+Code - 
+Projects\Saas\Alfa&Omega - 
+Sistema Inventario 
+2\Alfa&Omega - Sistema 
+Inventario 2\Alfa&Omega - 
+Sistema Inventario\Inventar
+io\build\AlfaOmega_v2\warn-
+AlfaOmega_v2.txt
+65692 INFO: Graph 
+cross-reference written to 
+C:\Users\ADMIN\Desktop\VS 
+Code - 
+Projects\Saas\Alfa&Omega - 
+Sistema Inventario 
+2\Alfa&Omega - Sistema 
+Inventario 2\Alfa&Omega - 
+Sistema Inventario\Inventar
+io\build\AlfaOmega_v2\xref-
+AlfaOmega_v2.html
+65862 INFO: checking PYZ
+65862 INFO: Building PYZ 
+because PYZ-00.toc is non 
+existent
+65863 INFO: Building PYZ 
+(ZlibArchive) 
+C:\Users\ADMIN\Desktop\VS 
+Code - 
+Projects\Saas\Alfa&Omega - 
+Sistema Inventario 
+2\Alfa&Omega - Sistema 
+Inventario 2\Alfa&Omega - 
+Sistema Inventario\Inventar
+io\build\AlfaOmega_v2\PYZ-0
+0.pyz
+68492 INFO: Building PYZ 
+(ZlibArchive) 
+C:\Users\ADMIN\Desktop\VS 
+Code - 
+Projects\Saas\Alfa&Omega - 
+Sistema Inventario 
+2\Alfa&Omega - Sistema 
+Inventario 2\Alfa&Omega - 
+Sistema Inventario\Inventar
+io\build\AlfaOmega_v2\PYZ-0
+0.pyz completed 
+successfully.
+68563 INFO: checking PKG
+68563 INFO: Building PKG 
+because PKG-00.toc is non 
+existent
+68563 INFO: Building PKG 
+(CArchive) 
+AlfaOmega_ERP.pkg
+68607 INFO: Building PKG 
+(CArchive) 
+AlfaOmega_ERP.pkg 
+completed successfully.
+68609 INFO: Bootloader C:\U
+sers\ADMIN\AppData\Local\Pr
+ograms\Python\Python313\Lib
+\site-packages\PyInstaller\
+bootloader\Windows-64bit-in
+tel\runw.exe
+68609 INFO: checking EXE
+68609 INFO: Building EXE 
+because EXE-00.toc is non 
+existent
+68609 INFO: Building EXE 
+from EXE-00.toc
+68609 INFO: Copying 
+bootloader EXE to 
+C:\Users\ADMIN\Desktop\VS 
+Code - 
+Projects\Saas\Alfa&Omega - 
+Sistema Inventario 
+2\Alfa&Omega - Sistema 
+Inventario 2\Alfa&Omega - 
+Sistema Inventario\Inventar
+io\build\AlfaOmega_v2\AlfaO
+mega_ERP.exe
+68657 INFO: Copying icon 
+to EXE
+68700 INFO: Copying 0 
+resources to EXE
+68700 INFO: Embedding 
+manifest in EXE
+68742 INFO: Appending PKG 
+archive to EXE
+68909 INFO: Fixing EXE 
+headers
+69258 INFO: Building EXE 
+from EXE-00.toc completed 
+successfully.
+69303 INFO: checking 
+COLLECT
+69303 INFO: Building 
+COLLECT because 
+COLLECT-00.toc is non 
+existent
+69303 INFO: Removing dir 
+C:\Users\ADMIN\Desktop\VS 
+Code - 
+Projects\Saas\Alfa&Omega - 
+Sistema Inventario 
+2\Alfa&Omega - Sistema 
+Inventario 2\Alfa&Omega - 
+Sistema Inventario\Inventar
+io\dist\AlfaOmega_ERP
+Traceback (most recent 
+call last):
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\site-packages\
+PyInstaller\building\utils.
+py", line 394, in 
+_make_clean_directory
+    os.remove(path)
+    ~~~~~~~~~^^^^^^
+PermissionError: [WinError 
+5] Acceso denegado: 'C:\\Us
+ers\\ADMIN\\Desktop\\VS 
+Code - 
+Projects\\Saas\\Alfa&Omega 
+- Sistema Inventario 
+2\\Alfa&Omega - Sistema 
+Inventario 2\\Alfa&Omega - 
+Sistema Inventario\\Inventa
+rio\\dist\\AlfaOmega_ERP'
+
+During handling of the 
+above exception, another 
+exception occurred:
+
+Traceback (most recent 
+call last):
+  File "<frozen runpy>", 
+line 198, in 
+_run_module_as_main
+  File "<frozen runpy>", 
+line 88, in _run_code
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\site-packages\
+PyInstaller\__main__.py", 
+line 321, in <module>
+    run()
+    ~~~^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\site-packages\
+PyInstaller\__main__.py", 
+line 215, in run
+    run_build(pyi_config, 
+spec_file, **vars(args))
+    ~~~~~~~~~^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\site-packages\
+PyInstaller\__main__.py", 
+line 70, in run_build
+    PyInstaller.building.bu
+ild_main.main(pyi_config, 
+spec_file, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\site-packages\
+PyInstaller\building\build_
+main.py", line 1275, in 
+main
+    build(specfile, 
+distpath, workpath, 
+clean_build)
+    ~~~~~^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\site-packages\
+PyInstaller\building\build_
+main.py", line 1213, in 
+build
+    exec(code, 
+spec_namespace)
+    
+~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File 
+"AlfaOmega_v2.spec", line 
+64, in <module>
+    coll = COLLECT(
+        exe,
+    ...<6 lines>...
+        
+name='AlfaOmega_ERP',
+    )
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\site-packages\
+PyInstaller\building\api.py
+", line 1147, in __init__
+    self.__postinit__()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\site-packages\
+PyInstaller\building\datast
+ruct.py", line 184, in 
+__postinit__
+    self.assemble()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\site-packages\
+PyInstaller\building\api.py
+", line 1159, in assemble
+    _make_clean_directory(s
+elf.name)
+    ~~~~~~~~~~~~~~~~~~~~~^^
+^^^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\site-packages\
+PyInstaller\building\utils.
+py", line 396, in 
+_make_clean_directory
+    _rmtree(path)
+    ~~~~~~~^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\site-packages\
+PyInstaller\building\utils.
+py", line 421, in _rmtree
+    shutil.rmtree(path)
+    ~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\shutil.py", 
+line 790, in rmtree
+    return 
+_rmtree_unsafe(path, onexc)
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\shutil.py", 
+line 621, in _rmtree_unsafe
+    onexc(os.rmdir, 
+fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^
+^^^^^^^
+  File "C:\Users\ADMIN\AppD
+ata\Local\Programs\Python\P
+ython313\Lib\shutil.py", 
+line 617, in _rmtree_unsafe
+    os.rmdir(fullname)
+    ~~~~~~~~^^^^^^^^^^
+OSError: [WinError 145] El 
+directorio no estß vacÝo: '
+C:\\Users\\ADMIN\\Desktop\\
+VS Code - 
+Projects\\Saas\\Alfa&Omega 
+- Sistema Inventario 
+2\\Alfa&Omega - Sistema 
+Inventario 2\\Alfa&Omega - 
+Sistema Inventario\\Inventa
+rio\\dist\\AlfaOmega_ERP\\_
+internal\\numpy-2.4.3.dist-
+info\\licenses\\numpy\\_cor
+e\\include\\numpy\\libdivid
+e'

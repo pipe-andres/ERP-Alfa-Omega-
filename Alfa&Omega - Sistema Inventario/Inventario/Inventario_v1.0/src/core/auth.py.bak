@@ -1,0 +1,103 @@
+# core/auth.py
+from __future__ import annotations
+from typing import Optional, List, Dict
+import tkinter as tk
+from tkinter import ttk, messagebox
+import re   
+
+from src.database.connection import get_connection
+
+# =========================================================
+# Utilidades de password (hash + verificación)
+# =========================================================
+from passlib.context import CryptContext
+
+pwd_context = CryptContext(schemes=["sha256_crypt"], deprecated="auto")
+
+def _hash_password(password: str) -> str:
+    """Hash password using sha256_crypt via passlib."""
+    return pwd_context.hash(password)
+
+def _verify_password(stored: str, password: str) -> bool:
+    """Verify password against sha256_crypt hash."""
+    try:
+        return pwd_context.verify(password, stored)
+    except Exception:
+        return False
+
+# =========================================================
+# RBAC helpers
+# =========================================================
+DEFAULT_ROLES = ["ADMIN", "USER", "AUDITOR"]
+DEFAULT_PERMS = [
+    ("ADMIN",        "Permisos administrativos completos"),
+    ("VIEW_AUDIT",   "Ver bitácora de auditoría"),
+]
+
+def _is_new_hash(value: str) -> bool:
+    """
+    True si tiene el formato 'algo:sha256:<salt>:<hexhash>'.
+    """
+    if not value or not isinstance(value, str):
+        return False
+    return bool(re.match(r"^algo:sha256:[0-9a-fA-F]{32}:[0-9a-fA-F]{64}$", value))
+
+def ensure_defaults() -> None:
+    """
+    - Crea roles/permisos base.
+    - Crea usuario admin si no existe.
+    - Si ya existe 'admin' pero su pass_hash es nulo/viejo, lo REPARA a 'admin123'.
+    - Asegura rol ADMIN y permisos.
+    """
+    with get_connection() as conn:
+        cur = conn.cursor()
+        # Roles
+        for r in DEFAULT_ROLES:
+            cur.execute("INSERT OR IGNORE INTO roles(name) VALUES(?)", (r,))
+
+        # Permisos
+        for code, desc in DEFAULT_PERMS:
+            cur.execute("INSERT OR IGNORE INTO permissions(code, description) VALUES(?,?)", (code, desc))
+
+        # ADMIN -> todos los permisos
+        cur.execute("SELECT id, code FROM permissions")
+        perms = cur.fetchall()
+        cur.execute("SELECT id FROM roles WHERE name='ADMIN'")
+        admin_role_id = cur.fetchone()[0]
+        for pid, _ in perms:
+            cur.execute("""
+                INSERT OR IGNORE INTO role_permissions(role_id, perm_id)
+                VALUES (?,?)
+            """, (admin_role_id, pid))
+
+        # Usuario admin
+        cur.execute("SELECT id, pass_hash, active FROM users WHERE username='admin'")
+        row = cur.fetchone()
+        if not row:
+            # no existe -> crear nuevo con admin123
+            ph = _hash_password("admin123")
+            cur.execute("""
+                INSERT INTO users (username, name, pass_hash, active)
+                VALUES (?,?,?,1)
+            """, ("admin", "Administrador", ph))
+            admin_id = cur.lastrowid
+        else:
+            admin_id, pass_hash, active = row[0], row[1], int(row[2])
+            # Si pass_hash es NULL, vacío o no tiene el formato nuevo, lo reparamos
+            if not _is_new_hash(pass_hash or ""):
+                ph = _hash_password("admin123")
+                cur.execute("UPDATE users SET pass_hash=?, active=1 WHERE id=?", (ph, admin_id))
+            else:
+                # nos aseguramos que esté activo
+                if active != 1:
+                    cur.execute("UPDATE users SET active=1 WHERE id=?", (admin_id,))
+
+        # Asignar rol ADMIN al admin
+        cur.execute("""
+            INSERT OR IGNORE INTO user_roles(user_id, role_id)
+            VALUES (?,?)
+        """, (admin_id, admin_role_id))
+
+        conn.commit()
+
+# rest of file omitted for backup

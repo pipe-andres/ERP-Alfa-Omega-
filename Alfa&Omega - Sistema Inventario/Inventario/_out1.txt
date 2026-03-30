@@ -1,0 +1,16 @@
+26:    get_valor_inventario,
+66:            self._update_zona_d()
+176:            ("💤", "Sin movimiento 30d"),
+180:            ("👥", "Top Clientes"),
+182:        self._zona_d_labels: list[tk.Label] = []
+200:                # Configurar clic en la card Top Clientes
+209:                self._zona_d_labels.append(lbl)
+211:        self._update_zona_d()
+250:    def _update_zona_d(self):
+251:        valor    = get_valor_inventario()
+255:        compras  = kpis.get("compras_periodo", 0.0)
+256:        desc     = kpis.get("descuentos_pct", 0.0)
+262:            f"${compras:,.0f}",
+265:        for lbl, val in zip(self._zona_d_labels, valores):
+433:        """Muestra ventana con el reporte de Top Clientes por Volumen usando ttk.Treeview."""
+437:        top_win.title("Top Clientes")

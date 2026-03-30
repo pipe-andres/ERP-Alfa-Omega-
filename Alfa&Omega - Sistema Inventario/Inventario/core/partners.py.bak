@@ -1,0 +1,57 @@
+# core/partners.py
+from __future__ import annotations
+from typing import Optional, List, Dict, Tuple
+from .database import get_connection
+
+# -----------------------------------
+# Esquema y migraciones mínimas
+# -----------------------------------
+
+def ensure_schema() -> None:
+    """
+    Crea la tabla partners si no existe.
+    Agrega partner_id a documents si falta (nullable).
+    Crea índices útiles para búsqueda.
+    """
+    with get_connection() as conn:
+        cur = conn.cursor()
+
+        # Tabla de partners (clientes/proveedores)
+        cur.execute("""
+        CREATE TABLE IF NOT EXISTS partners (
+            id        INTEGER PRIMARY KEY AUTOINCREMENT,
+            code      TEXT UNIQUE NOT NULL,
+            kind      TEXT NOT NULL,           -- 'CUSTOMER' o 'SUPPLIER'
+            name      TEXT NOT NULL,
+            tax_id    TEXT,                    -- NIT/RUC/ID fiscal
+            phone     TEXT,
+            email     TEXT,
+            address   TEXT,
+            city      TEXT,
+            notes     TEXT,
+            active    INTEGER NOT NULL DEFAULT 1
+        )
+        """)
+
+        # Índices recomendados
+        cur.execute("CREATE INDEX IF NOT EXISTS ix_partners_kind      ON partners(kind)")
+        cur.execute("CREATE INDEX IF NOT EXISTS ix_partners_name      ON partners(name)")
+        cur.execute("CREATE INDEX IF NOT EXISTS ix_partners_tax_id    ON partners(tax_id)")
+        cur.execute("CREATE INDEX IF NOT EXISTS ix_partners_active    ON partners(active)")
+
+        # Agregar partner_id a documents si falta (no rompe nada existente)
+        # documents ya existe por el ledger; si no existe, no fallamos.
+        try:
+            cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='documents'")
+            if cur.fetchone():
+                cur.execute("PRAGMA table_info(documents)")
+                cols = [r[1] for r in cur.fetchall()]
+                if "partner_id" not in cols:
+                    cur.execute("ALTER TABLE documents ADD COLUMN partner_id INTEGER")
+                    # Índice para búsquedas por partner
+                    cur.execute("CREATE INDEX IF NOT EXISTS ix_documents_partner ON documents(partner_id)")
+        except Exception:
+            # No detenemos la app si no existe documents aún
+            pass
+
+        conn.commit()

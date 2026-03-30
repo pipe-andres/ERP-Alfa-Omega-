@@ -1,0 +1,32 @@
+# Fase 3 — API SaaS
+fastapi>=0.111
+uvicorn[standard]>=0.29
+python-jose[cryptography]>=3.3
+httpx>=0.27          # FastAPI TestClient
+
+mysql-connector-python>=8.0
+bcrypt>=4.0
+passlib>=1.7.4
+
+# Base de datos opcional (Postgres/MySQL) - sólo si se migra
+# SQLAlchemy>=1.4
+# asyncpg>=0.27
+# alembic>=1.10
+# psycopg2-binary>=2.9
+
+# Utilidades
+python-dotenv>=1.0  # para manejar archivos .env
+requests>=2.0  # utilizado por update_manager
+packaging>=21.0  # para comparar versiones
+
+# Dependencias de testing (instalar en entorno de desarrollo)
+# pytest>=7.0
+# pytest-cov>=3.0
+
+# Nota: tkinter viene con la instalación de Python estándar
+
+# Empaquetado
+pyinstaller>=5.11  # sólo necesario para construir el instalador ejecutable
+
+# Fase 3.5 — Predicción IA inventario (Tarea 20)
+statsmodels>=0.14   # Holt-Winters ExponentialSmoothing

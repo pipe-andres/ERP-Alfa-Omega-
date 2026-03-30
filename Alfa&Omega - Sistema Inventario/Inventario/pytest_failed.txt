@@ -1,0 +1,101 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\ADMIN\Desktop\VS Code - Projects\Saas\Alfa&Omega - Sistema Inventario 2\Alfa&Omega - Sistema Inventario 2\Alfa&Omega - Sistema Inventario\Inventario
+configfile: pytest.ini
+plugins: anyio-4.12.1
+collected 81 items
+
+src\tests\test_api.py ...........                                        [ 13%]
+src\tests\test_api_negocio.py ............                               [ 28%]
+src\tests\test_company_config.py ...                                     [ 32%]
+src\tests\test_exports.py ....                                           [ 37%]
+src\tests\test_license.py ...                                            [ 40%]
+src\tests\test_limits.py ...........                                     [ 54%]
+src\tests\test_metrics.py ...                                            [ 58%]
+src\tests\test_phase5_validation.py ..........                           [ 70%]
+src\tests\test_prediccion.py ........                                    [ 80%]
+src\tests\test_purchase_orders.py .....                                  [ 86%]
+src\tests\test_suppliers.py ...                                          [ 90%]
+src\tests\test_system_info.py ..                                         [ 92%]
+src\tests\test_update.py FF....                                          [100%]
+
+================================== FAILURES ===================================
+_____________________________ test_local_version ______________________________
+src\tests\test_update.py:14: in test_local_version
+    assert v == "1.0.0"
+E   AssertionError: assert '3.5.0' == '1.0.0'
+E     
+E     - 1.0.0
+E     + 3.5.0
+__________________________ test_remote_version_file ___________________________
+src\tests\test_update.py:23: in test_remote_version_file
+    assert update_manager.is_update_available(info)
+E   AssertionError: assert False
+E    +  where False = <function is_update_available at 0x00000206E5449C60>({'notes': '', 'release_date': '', 'version': '1.1.0'})
+E    +    where <function is_update_available at 0x00000206E5449C60> = update_manager.is_update_available
+============================== warnings summary ===============================
+src/tests/test_phase5_validation.py::test_db_schema_integrity
+  C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\python.py:170: PytestReturnNotNoneWarning: Test functions should return None, but src/tests/test_phase5_validation.py::test_db_schema_integrity returned <class 'dict'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+src/tests/test_phase5_validation.py::test_db_indexes
+  C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\python.py:170: PytestReturnNotNoneWarning: Test functions should return None, but src/tests/test_phase5_validation.py::test_db_indexes returned <class 'dict'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+src/tests/test_phase5_validation.py::test_stock_control
+  C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\python.py:170: PytestReturnNotNoneWarning: Test functions should return None, but src/tests/test_phase5_validation.py::test_stock_control returned <class 'dict'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+src/tests/test_phase5_validation.py::test_stock_negative_prevention
+  C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\python.py:170: PytestReturnNotNoneWarning: Test functions should return None, but src/tests/test_phase5_validation.py::test_stock_negative_prevention returned <class 'dict'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+src/tests/test_phase5_validation.py::test_data_persistence
+  C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\python.py:170: PytestReturnNotNoneWarning: Test functions should return None, but src/tests/test_phase5_validation.py::test_data_persistence returned <class 'dict'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+src/tests/test_phase5_validation.py::test_license_validation
+  C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\python.py:170: PytestReturnNotNoneWarning: Test functions should return None, but src/tests/test_phase5_validation.py::test_license_validation returned <class 'dict'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+src/tests/test_phase5_validation.py::test_logging_system
+  C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\python.py:170: PytestReturnNotNoneWarning: Test functions should return None, but src/tests/test_phase5_validation.py::test_logging_system returned <class 'dict'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+src/tests/test_phase5_validation.py::test_backup_system
+  C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\python.py:170: PytestReturnNotNoneWarning: Test functions should return None, but src/tests/test_phase5_validation.py::test_backup_system returned <class 'dict'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+src/tests/test_phase5_validation.py::test_stability_stress
+  C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\python.py:170: PytestReturnNotNoneWarning: Test functions should return None, but src/tests/test_phase5_validation.py::test_stability_stress returned <class 'dict'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+src/tests/test_phase5_validation.py::test_executable_compatibility
+  C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\python.py:170: PytestReturnNotNoneWarning: Test functions should return None, but src/tests/test_phase5_validation.py::test_executable_compatibility returned <class 'dict'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED src/tests/test_update.py::test_local_version - AssertionError: assert ...
+FAILED src/tests/test_update.py::test_remote_version_file - AssertionError: a...
+================== 2 failed, 79 passed, 10 warnings in 4.17s ==================

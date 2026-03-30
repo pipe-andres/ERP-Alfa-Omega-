@@ -1,0 +1,130 @@
+"""Repository centralizado que encapsula queries frecuentes.
+Utiliza `src.database.connection.get_connection` y expone funciones
+útiles para evitar SELECT repetidos y para integrarse con caching.
+"""
+from __future__ import annotations
+from typing import List, Optional, Tuple, Dict, Any
+from dataclasses import asdict
+
+from src.database.connection import get_connection
+from src.core import caching
+
+
+def ensure_schema() -> None:
+    """Crea tablas adicionales necesarias para v2 (categorías, atributos).
+    Estas tablas son adiciones backward-compatible: no tocan las tablas
+    existentes y sirven solo para funcionalidades nuevas.
+    """
+    with get_connection() as conn:
+        cur = conn.cursor()
+        # categories
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS categories (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                parent_id INTEGER REFERENCES categories(id),
+                name TEXT NOT NULL UNIQUE,
+                slug TEXT
+            )
+        """)
+        # category attributes
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS category_attributes (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                category_id INTEGER NOT NULL REFERENCES categories(id),
+                attr_name TEXT NOT NULL,
+                attr_type TEXT DEFAULT 'text',
+                attr_options TEXT
+            )
+        """)
+        # product_attributes (flexible attributes per product)
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS product_attributes (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                product_code TEXT NOT NULL,
+                attr_name TEXT NOT NULL,
+                attr_value TEXT
+            )
+        """)
+        conn.commit()
+
+        # RBAC tables
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS roles (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL UNIQUE
+            )
+        """)
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS permissions (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                code TEXT NOT NULL UNIQUE,
+                description TEXT
+            )
+        """)
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS role_permissions (
+                role_id INTEGER NOT NULL REFERENCES roles(id) ON DELETE CASCADE,
+                permission_id INTEGER NOT NULL REFERENCES permissions(id) ON DELETE CASCADE,
+                PRIMARY KEY (role_id, permission_id)
+            )
+        """)
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS user_roles (
+                user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                role_id INTEGER NOT NULL REFERENCES roles(id) ON DELETE CASCADE,
+                PRIMARY KEY (user_id, role_id)
+            )
+        """)
+
+        # Warehouses and stock
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS warehouses (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL UNIQUE,
+                location TEXT
+            )
+        """)
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS warehouse_stock (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                product_code TEXT NOT NULL REFERENCES productos(codigo) ON UPDATE CASCADE ON DELETE RESTRICT,
+                warehouse_id INTEGER NOT NULL REFERENCES warehouses(id) ON DELETE CASCADE,
+                quantity REAL NOT NULL DEFAULT 0,
+                UNIQUE(product_code, warehouse_id)
+            )
+        """)
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS warehouse_transfers (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                product_code TEXT NOT NULL REFERENCES productos(codigo),
+                from_wh INTEGER,
+                to_wh INTEGER,
+                quantity REAL NOT NULL,
+                date TEXT NOT NULL,
+                user_id INTEGER,
+                notes TEXT
+            )
+        """)
+
+        # Kardex moves
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS kardex_moves (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                product_code TEXT NOT NULL REFERENCES productos(codigo),
+                type TEXT NOT NULL, -- 'IN'|'OUT'|'TRANSFER_IN'|'TRANSFER_OUT'
+                qty REAL NOT NULL,
+                unit_cost REAL,
+                total_cost REAL,
+                balance_qty REAL,
+                balance_cost REAL,
+                balance_total REAL,
+                date TEXT NOT NULL,
+                warehouse_id INTEGER,
+                ref_type TEXT,
+                ref_id INTEGER
+            )
+        """)
+        conn.commit()
+
+
+# rest of file omitted for backup

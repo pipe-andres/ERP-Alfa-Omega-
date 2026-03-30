@@ -1,0 +1,43 @@
+﻿--- PASO 1: COPIAR BD LIMPIA ---
+BD limpia copiada
+
+--- PASO 2: BUILD PYTHON 3.11 ---
+PyInstaller fall¾ con c¾digo 1
+
+[┌ltimas 30 lÝneas del log]:
+46181 INFO: checking COLLECT
+46181 INFO: Building COLLECT because COLLECT-00.toc is non existent
+46181 INFO: Removing dir C:\Users\ADMIN\Desktop\VS Code - Projects\Saas\Alfa&Omega - Sistema Inventario 2\Alfa&Omega - Sistema Inventario 2\Alfa&Omega - Sistema Inventario\Inventario\dist\AlfaOmega_ERP
+46233 INFO: Building COLLECT COLLECT-00.toc
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python311\Lib\site-packages\PyInstaller\__main__.py", line 321, in <module>
+    run()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python311\Lib\site-packages\PyInstaller\__main__.py", line 215, in run
+    run_build(pyi_config, spec_file, **vars(args))
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python311\Lib\site-packages\PyInstaller\__main__.py", line 70, in run_build
+    PyInstaller.building.build_main.main(pyi_config, spec_file, **kwargs)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python311\Lib\site-packages\PyInstaller\building\build_main.py", line 1275, in main
+    build(specfile, distpath, workpath, clean_build)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python311\Lib\site-packages\PyInstaller\building\build_main.py", line 1213, in build
+    exec(code, spec_namespace)
+  File "AlfaOmega_v2.spec", line 64, in <module>
+    coll = COLLECT(
+           ^^^^^^^^
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python311\Lib\site-packages\PyInstaller\building\api.py", line 1147, in __init__
+    self.__postinit__()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python311\Lib\site-packages\PyInstaller\building\datastruct.py", line 184, in __postinit__
+    self.assemble()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python311\Lib\site-packages\PyInstaller\building\api.py", line 1224, in assemble
+    shutil.copyfile(src_name, dest_path)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python311\Lib\shutil.py", line 258, in copyfile
+    with open(dst, 'wb') as fdst:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ADMIN\\Desktop\\VS Code - Projects\\Saas\\Alfa&Omega - Sistema Inventario 2\\Alfa&Omega - Sistema Inventario 2\\Alfa&Omega - Sistema Inventario\\Inventario\\dist\\AlfaOmega_ERP\\_internal\\statsmodels\\tsa\\statespace\\_smoothers\\_univariate_diffuse.cp311-win_amd64.pyd'
+
+--- PASO 3: RESTAURAR BD DEV ---
+BD dev restaurada
+
+--- PASO 4: VERIFICAR ---
+EXE OK: dist/AlfaOmega_ERP/AlfaOmega_ERP.exe (18.8 MB)

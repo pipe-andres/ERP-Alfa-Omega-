@@ -1,0 +1,39 @@
+# .gitignore — Alfa & Omega ERP
+
+# BD local y volúmenes Docker
+data/postgres/
+*.db
+*.db-shm
+*.db-wal
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Variables de entorno (nunca subir credenciales reales)
+.env
+.env.local
+.env.*.local
+# Mantener como plantilla de referencia:
+!.env.postgres
+
+# Build / dist / PyInstaller
+dist/
+build/
+*.spec
+
+# Logs y backups locales
+logs/
+backups/
+*.log
+
+# IDE
+.vscode/settings.json
+.idea/
+*.suo
+*.user

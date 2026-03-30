@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  inventario-db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: inventario_user
+      POSTGRES_PASSWORD: inventario_pass
+      POSTGRES_DB: inventario
+      POSTGRES_INITDB_ARGS: "-c max_connections=100"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_inventario:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U inventario_user -d inventario"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    command: ["postgres", "-c", "statement_timeout=30000", "-c", "idle_in_transaction_session_timeout=30000"]
+volumes:
+  postgres_data_inventario:

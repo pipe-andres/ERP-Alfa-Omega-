@@ -1,0 +1,76 @@
+# core/database.py
+import os
+import sqlite3
+from contextlib import contextmanager
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "data")
+os.makedirs(DATA_DIR, exist_ok=True)
+
+# Config via env
+DB_ENGINE = os.getenv("DB_ENGINE", "sqlite").lower()  # 'sqlite' or 'mysql'
+DB_PATH = os.getenv("DB_PATH", os.path.join(DATA_DIR, "inventario.db"))
+
+# MySQL settings (used only if DB_ENGINE == 'mysql')
+DB_HOST = os.getenv("DB_HOST", "localhost")
+DB_NAME = os.getenv("DB_NAME", "inventario")
+DB_USER = os.getenv("DB_USER", "root")
+DB_PASS = os.getenv("DB_PASS", "")
+DB_POOL_SIZE = int(os.getenv("DB_POOL_SIZE", "5"))
+
+_mysql_pool = None
+
+try:
+    import mysql.connector
+    from mysql.connector import pooling
+except Exception:
+    mysql = None
+    pooling = None
+
+
+@contextmanager
+def get_connection():
+    """Context manager that yields a DB connection.
+    By default uses SQLite. Set env `DB_ENGINE=mysql` to use MySQL.
+    """
+    # DEPRECATION NOTICE: this module provides a legacy sync DB access layer.
+    # The project now uses SQLAlchemy async (see `src/database/orm.py`) and
+    # async services in `src/services/*_async.py`. This module will be
+    # removed in a future release. Prefer the async API and update callers.
+    # See docs/MIGRATION_TO_POSTGRES.md for migration instructions.
+
+    if DB_ENGINE == "mysql":
+        if pooling is None:
+            raise RuntimeError("mysql-connector-python is required for MySQL support. Install it in your environment.")
+        global _mysql_pool
+        if _mysql_pool is None:
+            _mysql_pool = pooling.MySQLConnectionPool(
+                pool_name="inventario_pool",
+                pool_size=DB_POOL_SIZE,
+                host=DB_HOST,
+                database=DB_NAME,
+                user=DB_USER,
+                password=DB_PASS,
+                charset="utf8mb4",
+                use_unicode=True,
+            )
+        conn = _mysql_pool.get_connection()
+        try:
+            yield conn
+        finally:
+            try:
+                conn.close()
+            except Exception:
+                pass
+    else:
+        conn = sqlite3.connect(DB_PATH)
+        conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA foreign_keys = ON;")
+        conn.execute("PRAGMA journal_mode = WAL;")
+        conn.execute("PRAGMA synchronous = NORMAL;")
+        try:
+            yield conn
+        finally:
+            conn.close()
+
+# rest of file omitted for backup

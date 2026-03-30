@@ -1,0 +1,34 @@
+--- OUTPUT SCRIPT 1 ---
+================================================================
+🔑 GENERADOR DE LICENCIAS - ALFA & OMEGA ERP
+================================================================
+
+Nombre del cliente / empresa: 
+Planes disponibles:
+  1) TRIAL
+  2) PRO
+  3) ENTERPRISE
+Selecciona el plan (1/2/3): 
+¿Es una licencia temporal / suscripción anual? (s/N): 
+================================================================
+✅ LICENCIA GENERADA CON ÉXITO
+================================================================
+Cliente: Perfumería La Rosa
+Plan   : PRO
+Validez: Permanente (Sin expiración)
+----------------------------------------------------------------
+COPIA Y PEGA EL SIGUIENTE TEXTO COMPLETO PARA EL CLIENTE:
+
+{"machine": "4d97a4d62af9c10456307b909fd77e814b7f6aabf9543ff9304eb6deaf48957c", "plan": "PRO", "expiration": null, "signature": "5a2efb8b4cdeb4b64afac33d4ef12d3be202db4eb40bbb88b2c47d5660c33c3d"}
+
+================================================================
+
+--- OUTPUT SCRIPT 2 ---
+================================================================
+⚠️  ATENCIÓN: PREPARACIÓN PARA PRODUCCIÓN / DEMO LIMPIA
+================================================================
+Este script ELIMINARÁ TODOS los datos operacionales de la base de datos.
+Se conservará ÚNICAMENTE el usuario 'admin' y la estructura base.
+Se creará un backup automático antes de proceder.
+
+Para continuar, escribe la palabra 'RESET': 🔴 Operación cancelada por el usuario.

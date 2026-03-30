@@ -1,0 +1,23 @@
+# Actualización de requirements.txt
+# Dependencias del proyecto Alfa & Omega - Sistema Inventario v2.0.0
+
+# Base de Datos
+mysql-connector-python>=8.0
+
+# Seguridad (Hash de contraseñas)
+bcrypt>=4.0
+
+# Reportes y Exportación
+reportlab>=3.6.0          # Generación de PDFs
+openpyxl>=3.8.0          # Exportación a Excel
+
+# Testing (opcional pero recomendado)
+pytest>=7.0
+pytest-cov>=3.0
+pytest-asyncio>=0.21.0  # Para tests async
+
+# Logging y Monitoreo (opcional)
+# python-dotenv>=0.20.0
+
+# GUI (incluido con Python)
+# tkinter - incluido en Python estándar

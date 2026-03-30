@@ -1,0 +1,33 @@
+{'codigo': 'KPROD', 'nombre': 'KPROD'}
+{'codigo': 'XPROD', 'nombre': 'X'}
+{'codigo': 'TEST123', 'nombre': 'Producto Test'}
+{'codigo': 'GUI001', 'nombre': 'Producto desde GUI'}
+{'codigo': 'STOCK_TEST', 'nombre': 'Producto con Stock'}
+{'codigo': '5', 'nombre': 'a'}
+{'codigo': '11', 'nombre': 'ss'}
+{'codigo': '21', 'nombre': 'aaaa'}
+{'codigo': '1', 'nombre': 'alfa'}
+{'codigo': 'PROD-001', 'nombre': 'Producto A'}
+{'codigo': 'PROD-002', 'nombre': 'Producto B'}
+{'codigo': 'PROD-003', 'nombre': 'Producto C'}
+{'codigo': 'PROD-004', 'nombre': 'Producto D'}
+{'codigo': 'PROD-005', 'nombre': 'Producto E'}
+{'codigo': 'PROD-006', 'nombre': 'Producto F'}
+---
+{'username': 'admin', 'name': 'Administrador'}
+{'username': 'pupi', 'name': 'pepe'}
+{'username': 'user', 'name': 'nicolas'}
+{'username': 'rbac_user', 'name': 'RBAC User'}
+{'username': 'afgg', 'name': 'andru'}
+{'username': 'andres', 'name': 'felipe'}
+{'username': 'vale', 'name': 'Valentina'}
+---
+{'kind': 'CUSTOMER', 'name': 'María García', 'code': 'CUST-001'}
+{'kind': 'CUSTOMER', 'name': 'Juan Pérez', 'code': 'CUST-002'}
+{'kind': 'CUSTOMER', 'name': 'Carlos López', 'code': 'CUST-003'}
+{'kind': 'SUPPLIER', 'name': 'Proveedor Test PO', 'code': 'SUPP-TEST-PO'}
+{'kind': 'SUPPLIER', 'name': 'Proveedor de Prueba', 'code': 'SUPP001'}
+{'kind': 'SUPPLIER', 'name': 'Proveedor para OC', 'code': 'SUPP-PO-TEST'}
+{'kind': 'SUPPLIER', 'name': 'Proveedor para Listado', 'code': 'SUPP-LIST-TEST'}
+{'kind': 'SUPPLIER', 'name': 'Proveedor para Recepción', 'code': 'SUPP-RECV-TEST'}
+{'kind': 'SUPPLIER', 'name': 'Proveedor para Cancelación', 'code': 'SUPP-CANCEL-TEST'}

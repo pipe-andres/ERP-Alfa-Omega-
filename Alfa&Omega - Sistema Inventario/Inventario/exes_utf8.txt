@@ -1,0 +1,4 @@
+dist\AlfaOmega\AlfaOmega.exe (12.4 MB)
+dist\AlfaOmega_ERP\AlfaOmega_ERP.exe (25.3 MB)
+dist\AlfaOmega_ERP\_internal\tcl\nmake\x86_64-w64-mingw32-nmakehlp.exe (0.0 MB)
+dist\Inventario\Inventario.exe (12.3 MB)

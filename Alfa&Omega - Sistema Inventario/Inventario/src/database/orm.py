@@ -1,0 +1,48 @@
+"""Async SQLAlchemy engine and session factory.
+
+This module provides an Async Engine and session helper for the application.
+Keep the legacy `src.database.connection` file for backward compatibility while
+we progressively refactor services to use this layer.
+"""
+from __future__ import annotations
+import os
+from contextlib import asynccontextmanager
+from dotenv import load_dotenv
+
+load_dotenv()
+
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
+from sqlalchemy.orm import sessionmaker
+
+# Check if using SQLite for testing
+DB_ENGINE = os.getenv("DB_ENGINE", "postgres")
+DB_PATH = os.getenv("DB_PATH", "")
+
+if DB_ENGINE == "sqlite" and DB_PATH:
+    DATABASE_URL = f"sqlite+aiosqlite:///{DB_PATH}"
+else:
+    DATABASE_URL = os.getenv("DATABASE_URL")
+    if not DATABASE_URL:
+        # default local fallback for quick dev (not for production)
+        DATABASE_URL = "postgresql+asyncpg://inventario_user:changeme@localhost:5432/inventario_db"
+
+# create async engine
+engine = create_async_engine(DATABASE_URL, echo=False, future=True)
+
+# Session factory
+AsyncSessionLocal = sessionmaker(bind=engine, class_=AsyncSession, expire_on_commit=False)
+
+@asynccontextmanager
+async def get_async_session() -> AsyncSession:
+    """Yield an AsyncSession instance as an async context manager.
+
+    Usage:
+        async with get_async_session() as session:
+            await session.execute(...)
+    """
+    async with AsyncSessionLocal() as session:
+        yield session
+
+# Helper to expose engine for migration scripts or create_all operations
+def get_engine():
+    return engine

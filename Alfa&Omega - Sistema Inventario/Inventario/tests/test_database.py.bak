@@ -1,0 +1,13 @@
+```python
+from src.database.connection import init_db, get_connection
+
+
+def test_db_initialization_and_tables():
+    init_db()
+    with get_connection() as conn:
+        cur = conn.cursor()
+        cur.execute("SELECT name FROM sqlite_master WHERE type='table'")
+        tables = [r[0] for r in cur.fetchall()]
+        assert 'productos' in tables
+
+```

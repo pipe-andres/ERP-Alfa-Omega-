@@ -1,0 +1,11 @@
+# core/documents.py
+from __future__ import annotations
+from typing import Optional
+import os
+from decimal import Decimal, ROUND_HALF_UP
+
+from .database import get_connection
+
+D = Decimal
+
+# rest of file omitted for backup

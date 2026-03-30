@@ -1,0 +1,35 @@
+# debug_schema.py
+import sqlite3, os
+DB_ENGINE = os.getenv("DB_ENGINE", "sqlite").lower()
+if DB_ENGINE == 'postgres':
+    print("Skipping sqlite debug script when DB_ENGINE=postgres")
+    raise SystemExit(0)
+DB_PATH = os.path.join(os.path.dirname(__file__), "inventario.db")
+print("DB:", DB_PATH, "exists=", os.path.exists(DB_PATH))
+conn = sqlite3.connect(DB_PATH)
+cur = conn.cursor()
+
+def table_info(name):
+    try:
+        cur.execute(f"PRAGMA table_info({name})")
+        cols = [(r[1], r[2]) for r in cur.fetchall()]
+        print(f"\n-- {name} --")
+        for c,t in cols: print(f"  {c:20} {t}")
+    except Exception as e:
+        print(f"\n-- {name} -- ERROR:", e)
+
+print("\n== Tablas existentes ==")
+cur.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name")
+for (t,) in cur.fetchall():
+    print(" ", t)
+
+for t in ["productos","documents","document_lines","doc_series","partners"]:
+    table_info(t)
+
+# índices útiles
+print("\n== Índices ==")
+cur.execute("SELECT name, tbl_name FROM sqlite_master WHERE type='index' ORDER BY tbl_name, name")
+for n, tbl in cur.fetchall():
+    print(f"  {tbl:15} -> {n}")
+
+conn.close()
