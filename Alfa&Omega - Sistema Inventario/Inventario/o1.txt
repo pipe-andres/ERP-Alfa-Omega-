@@ -1,6 +1,0 @@
-src/app/cash_manager_window.py:53:    def _build_ui(self):
-src/app/cash_manager_window.py:54:        nb = ttk.Notebook(self)
-src/app/cash_manager_window.py:58:        nb.add(self.tab_control, text="Control")
-src/app/cash_manager_window.py:60:        nb.add(self.tab_history, text="Historial")
-src/app/cash_manager_window.py:66:    def _build_control_tab(self, parent: ttk.Frame):
-src/app/cash_manager_window.py:127:    def _build_history_tab(self, parent: ttk.Frame):

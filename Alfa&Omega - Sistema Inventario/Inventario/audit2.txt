@@ -1,8 +1,0 @@
-crm_window.py                                 T=False P=True  C=True  E=True 
-suppliers_window.py                           T=False P=True  C=True  E=True 
-purchase_orders_window.py                     T=False P=True  C=True  E=True 
-cash_manager_window.py                        T=False P=False C=True  E=False
-returns_window.py                             T=False P=True  C=False E=False
-finanzas_window.py                            T=False P=False C=True  E=False
-sucursales_window.py                          T=False P=False C=True  E=True 
-inteligencia_window.py                        T=False P=False C=False E=True 

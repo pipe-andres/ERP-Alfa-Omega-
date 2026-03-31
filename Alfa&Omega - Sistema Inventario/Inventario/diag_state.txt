@@ -1,4 +1,0 @@
-productos: 50
-partners: 9
-documentos: 659
-usuarios: ['admin', 'afgg', 'andres', 'pupi', 'rbac_user', 'user', 'vale']

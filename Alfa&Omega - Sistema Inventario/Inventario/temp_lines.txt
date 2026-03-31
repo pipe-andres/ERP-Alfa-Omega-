@@ -1,4 +1,0 @@
- 408 líneas  src/app/finanzas_window.py
- 392 líneas  src/app/sucursales_window.py
- 508 líneas  src/app/purchase_orders_window.py
- 528 líneas  src/app/crm_window.py
