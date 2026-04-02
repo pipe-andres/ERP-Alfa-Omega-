@@ -1678,6 +1678,11 @@ class InventarioApp:
                 command=self.nuevo_producto
             ).pack()
         else:
+            # Limpiar el empty state si existía
+            for child in self.table_container.winfo_children():
+                if isinstance(child, tk.Frame):
+                    child.destroy()
+
             # Mostrar tabla
             if not self.tree.winfo_viewable():
                 self.tree.pack(fill="both", expand=True)
@@ -1713,6 +1718,8 @@ class InventarioApp:
         self._update_stats()
         if hasattr(self, 'dashboard') and self.dashboard:
             self.dashboard.update()
+        self.tree.update_idletasks()
+        self.root.update_idletasks()
 
     def buscar_producto(self):
         self._filter_by = self.combo_filtro.get()
@@ -1774,15 +1781,28 @@ class InventarioApp:
                 from src.services.warehouses import set_stock
                 set_stock(dlg.result["codigo"], warehouse_id, dlg.result["cantidad"], user_id=self.user["id"])
             
-            # Set filter exactly to the new product so it is visible on page 1
-            self.combo_filtro.set("Código")
+            # Limpiar filtros para no ocultar el resto de productos (UX corregido)
+            self.combo_filtro.current(0)
             self.entry_buscar.delete(0, tk.END)
-            self.entry_buscar.insert(0, dlg.result["codigo"])
-            self._filter_by = "Código"
-            self._filter_q = dlg.result["codigo"]
+            self.entry_buscar.insert(0, "🔍 Buscar producto por código o nombre...")
+            self.entry_buscar.config(fg="#6B7280")
+            self._filter_by = None
+            self._filter_q = ""
 
-            # Resetear a la primera página y recargar
-            self._page = 1
+            # Calcular en qué página quedó alfabéticamente el nuevo producto para saltar ahí
+            try:
+                from src.database.connection import DB_ENGINE, get_connection
+                if DB_ENGINE == 'json':
+                    self._page = 1
+                else:
+                    with get_connection() as conn:
+                        cur = conn.cursor()
+                        cur.execute("SELECT COUNT(*) FROM productos WHERE activo=1 AND LOWER(nombre) <= ?", (dlg.result["nombre"].lower(),))
+                        pos = cur.fetchone()[0]
+                    self._page = max(1, ((pos - 1) // self._page_size) + 1)
+            except Exception:
+                self._page = 1
+
             self._total_items = count_products(self._filter_by, self._filter_q)
             self.refresh_products()
             # seleccionar y hacer scroll hacia el nuevo registro
@@ -1907,6 +1927,40 @@ class InventarioApp:
     def _load_hist(self):
         for r in self.tree_hist.get_children():
             self.tree_hist.delete(r)
+        try:
+            from src.services.audit import list_audit
+            rows, total = list_audit(limit=200, order_desc=True)
+            for fecha, usuario, accion, detalles in rows:
+                # Traducir acciones a español legible
+                acciones_es = {
+                    "PRODUCT_CREATE": "Producto creado",
+                    "PRODUCT_UPDATE": "Producto editado",
+                    "PRODUCT_DELETE": "Producto eliminado",
+                    "PRODUCT_IMPORT_CSV": "Importación CSV",
+                    "PRODUCT_IMPORT_XLSX": "Importación Excel",
+                    "DOC_SALE": "Venta registrada",
+                    "DOC_PURCHASE": "Compra registrada",
+                    "DOC_ADJUST": "Ajuste de inventario",
+                    "LOGIN": "Inicio de sesión",
+                    "LOGOUT": "Cierre de sesión",
+                    "DISCOUNT_APPLIED": "Descuento aplicado",
+                }
+                accion_es = acciones_es.get(accion, accion)
+                # Extraer info relevante de detalles
+                try:
+                    import json
+                    d = json.loads(detalles) if detalles else {}
+                    codigo = d.get("codigo", d.get("numero", d.get("username", "")))
+                    nombre = d.get("nombre", d.get("path", ""))
+                except Exception:
+                    codigo = ""
+                    nombre = detalles[:50] if detalles else ""
+                self.tree_hist.insert("", "end", values=(
+                    codigo, nombre, accion_es, fecha
+                ))
+        except Exception as e:
+            import logging
+            logging.warning("_load_hist error: %s", e)
 
     # =========================
     # Movimientos: handlers

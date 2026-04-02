@@ -37,3 +37,6 @@ backups/
 .idea/
 *.suo
 *.user
+
+*.zip
+*.exe
